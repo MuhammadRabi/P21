@@ -1,0 +1,145 @@
+/* idenity color */
+/* Start Global rules */
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/* medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/* large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* End Global rules */
+body {
+  font-family: "Work Sans", sans-serif;
+}
+
+.header {
+  padding: 20px;
+}
+
+.header .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header .logo img {
+  width: 60px;
+}
+
+.header .links {
+  position: relative;
+}
+
+.header .links .icon {
+  width: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.header .links .icon:hover span:nth-child(2) {
+  width: 100%;
+}
+
+.header .links .icon span {
+  height: 3px;
+  background-color: #222;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.header .links .icon span:first-child {
+  width: 100%;
+}
+
+.header .links .icon span:nth-child(2) {
+  width: 50%;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.header .links .icon span:last-child {
+  width: 100%;
+}
+
+.links ul {
+  background-color: #f6f6f6;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  right: 0;
+  min-width: 200px;
+  top: calc(100% + 10px);
+  display: none;
+}
+
+.links ul :before {
+  content: "";
+  border-style: solid;
+  border-width: 10px;
+  border-color: transparent transparent #f6f6f6 transparent;
+  position: absolute;
+  top: -20px;
+  right: 7px;
+}
+
+.links ul li a {
+  display: block;
+  color: #333;
+  text-transform: capitalize;
+  text-decoration: none;
+  padding: 15px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.links ul li a:hover {
+  padding-left: 25px;
+}
+
+.links:hover ul {
+  display: block;
+}
+
+.links li:not(:last-child) a {
+  border-bottom: 1px solid #ddd;
+}
+/*# sourceMappingURL=main.css.map */
