@@ -1,3 +1,4 @@
+/* import major sass files */
 /* idenity color */
 /* Start Global rules */
 * {
@@ -5,6 +6,7 @@
   box-sizing: border-box;
 }
 
+/* ===== Manual Responsive ===== */
 .container {
   padding-left: 15px;
   padding-right: 15px;
@@ -33,11 +35,40 @@
   }
 }
 
+.special-heading {
+  text-align: center;
+  font-size: 100px;
+  color: #f6f6f6;
+  font-weight: 800;
+  letter-spacing: -3px;
+  margin: 0;
+}
+
+.special-heading + p {
+  text-align: center;
+  color: #575757;
+  margin: -30px 0 0;
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: -2px;
+}
+
+@media (max-width: 767px) {
+  .special-heading {
+    font-size: 60px;
+  }
+  .special-heading + p {
+    font-size: 14px;
+    margin: -20px 0 0;
+  }
+}
+
 /* End Global rules */
 body {
   font-family: "Work Sans", sans-serif;
 }
 
+/* === start Header ===*/
 .header {
   padding: 20px;
 }
@@ -62,7 +93,53 @@ body {
   position: relative;
 }
 
-.header .links .icon {
+.header .links ul {
+  background-color: #f6f6f6;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  right: 0;
+  min-width: 200px;
+  top: calc(100% + 10px);
+  display: none;
+  z-index: 5;
+}
+
+.header .links ul :before {
+  content: "";
+  border-style: solid;
+  border-width: 10px;
+  border-color: transparent transparent #f6f6f6 transparent;
+  position: absolute;
+  top: -20px;
+  right: 7px;
+}
+
+.header .links ul li a {
+  display: block;
+  color: #333;
+  text-transform: capitalize;
+  text-decoration: none;
+  padding: 15px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.header .links ul li a:hover {
+  padding-left: 25px;
+  color: #000;
+}
+
+.header .links:hover ul {
+  display: block;
+}
+
+.header .links li:not(:last-child) a {
+  border-bottom: 1px solid #ddd;
+}
+
+.header .icon {
   width: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -74,72 +151,161 @@ body {
           justify-content: flex-end;
 }
 
-.header .links .icon:hover span:nth-child(2) {
-  width: 100%;
-}
-
-.header .links .icon span {
+.header .icon span {
   height: 3px;
   background-color: #222;
   margin-bottom: 5px;
   cursor: pointer;
 }
 
-.header .links .icon span:first-child {
+.header .icon span:first-child {
   width: 100%;
 }
 
-.header .links .icon span:nth-child(2) {
+.header .icon span:nth-child(2) {
   width: 50%;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
-.header .links .icon span:last-child {
+.header .icon span:last-child {
   width: 100%;
 }
 
-.links ul {
-  background-color: #f6f6f6;
-  position: absolute;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  right: 0;
-  min-width: 200px;
-  top: calc(100% + 10px);
-  display: none;
+.header .icon:hover span:nth-child(2) {
+  width: 100%;
 }
 
-.links ul :before {
-  content: "";
-  border-style: solid;
-  border-width: 10px;
-  border-color: transparent transparent #f6f6f6 transparent;
-  position: absolute;
-  top: -20px;
-  right: 7px;
+/* === end Header ===*/
+/* === start Hero-area ===*/
+.hero-area {
+  /* position: relative;*/
+  background-image: url("../images/686998.jpg");
+  background-size: cover;
+  height: calc(100vh - 68px);
+  background-position: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.links ul li a {
-  display: block;
-  color: #333;
+.hero-area .intro-text {
   text-transform: capitalize;
-  text-decoration: none;
+  text-align: center;
+  width: 450px;
+  max-width: 100%;
+}
+
+.hero-area .intro-text h1 {
+  font-size: 50px;
+  font-weight: bold;
+  margin: 0;
+  color: #10cab7;
+}
+
+.hero-area .intro-text p {
+  font-size: 19px;
+  line-height: 1.8;
+}
+
+/* === end Hero-area ===*/
+/* === start feats ===*/
+/* === without grid ===*/
+/*.feats {
+  padding: $sectionPadding;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .feat-box {
+    width: 30%;
+    padding: 15px;
+    text-align: center;
+    .feat-icon {
+      font-size: 48px;
+      color: $mainColor;
+    }
+    .feat-text {
+      p {
+        line-height: 1.7;
+        font-size: 14px;
+      }
+    }
+  }
+}*/
+/* === without grid ===*/
+/* === with grid ===*/
+.feats {
+  padding: 60px 0;
+  background-color: #fafafa;
+}
+
+.feats .container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 25px;
+}
+
+.feats .feat-box {
+  /* border: 1px solid #ccc;*/
   padding: 15px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  text-align: center;
 }
 
-.links ul li a:hover {
-  padding-left: 25px;
+.feats .feat-box .feat-icon {
+  font-size: 48px;
+  color: #10cab7;
 }
 
-.links:hover ul {
-  display: block;
+.feats .feat-box .feat-text h3 {
+  font-weight: 800;
 }
 
-.links li:not(:last-child) a {
-  border-bottom: 1px solid #ddd;
+.feats .feat-box .feat-text p {
+  line-height: 1.8;
+  font-size: 15px;
+  color: #777;
 }
+
+/* === with grid ===*/
+/* === end feats ===*/
+/* === start services ===*/
+.services {
+  padding: 60px 0;
+}
+
+.services .container .service-content {
+  padding-top: 60px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 30px;
+  margin-top: 100px;
+}
+
+.services .container .service-content .srv-tower {
+  border: 1px solid red;
+}
+
+.services .container .service-content .srv-tower .srv {
+  border: 1px solid red;
+  padding: 15px;
+}
+
+.services .container .service-content .srv-tower .image img {
+  max-width: 100%;
+}
+
+/* === end services ===*/
 /*# sourceMappingURL=main.css.map */
