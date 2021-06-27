@@ -185,41 +185,13 @@ body {
 
 /* === start feats ===*/
 
-/* === without grid ===*/
-/*.feats {
-  padding: $sectionPadding;
-
-  .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .feat-box {
-    width: 30%;
-    padding: 15px;
-    text-align: center;
-    .feat-icon {
-      font-size: 48px;
-      color: $mainColor;
-    }
-    .feat-text {
-      p {
-        line-height: 1.7;
-        font-size: 14px;
-      }
-    }
-  }
-}*/
-/* === without grid ===*/
-
 /* === with grid ===*/
 .feats {
   padding: $sectionPadding;
   background-color: $darkerBackground;
 
   .container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    @include grid-4;
     grid-gap: 25px;
   }
   .feat-box {
@@ -253,8 +225,7 @@ body {
   padding: $sectionPadding;
   .container {
     .service-content {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      @include grid-4;
       grid-gap: 30px;
       margin: $contentMargin;
       .srv-tower {
@@ -327,8 +298,7 @@ body {
   background-color: $darkerBackground;
   .container {
     .port-content {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      @include grid-4;
       grid-gap: 30px;
       margin: $contentMargin;
       .card {
