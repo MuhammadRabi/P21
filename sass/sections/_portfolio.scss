@@ -1,0 +1,41 @@
+/* import major sass files */
+
+@use "../components/variables" as *;
+@use "../components/mixins" as *;
+@use "../components/buttons" as *;
+
+/* === start portfolio ===*/
+
+.portfolio {
+  padding: $sectionPadding;
+  background-color: $darkerBackground;
+  .container {
+    .port-content {
+      @include grid-4;
+      grid-gap: 30px;
+      margin: $contentMargin;
+      .card {
+        .card-image {
+          img {
+            max-width: 100%;
+          }
+        }
+        .card-text {
+          background-color: #fff;
+          padding: 7px 20px;
+          h3 {
+            margin: 0;
+          }
+          p {
+            color: #777;
+            line-height: 1.6;
+            font-size: 15px;
+            margin-top: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* === end portfolio ===*/

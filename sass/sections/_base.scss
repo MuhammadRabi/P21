@@ -1,0 +1,69 @@
+/* import major sass files */
+
+@use "../components/variables" as *;
+@use "../components/mixins" as *;
+@use "../components/buttons" as *;
+
+/* Start Global rules */
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* ===== Manual Responsive ===== */
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  /* small */
+  @media (min-width: 768px) {
+    width: 750px;
+  }
+  /* medium */
+  @media (min-width: 992px) {
+    width: 970px;
+  }
+  /* large */
+  @media (min-width: 1200px) {
+    width: 1170px;
+  }
+}
+/* ===== Manual Responsive ===== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+.special-heading {
+  text-align: center;
+  font-size: 100px;
+  color: $headingColor;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -3px;
+  @media (max-width: 767px) {
+    font-size: 60px;
+  }
+
+  + p {
+    text-align: center;
+    color: #575757;
+    margin: -30px 0 0;
+    text-align: center;
+    font-size: 18px;
+    @media (max-width: 767px) {
+      font-size: 14px;
+      margin: -20px 0 0;
+    }
+  }
+}
+
+/* End Global rules */
+
+body {
+  font-family: "Work Sans", sans-serif;
+}

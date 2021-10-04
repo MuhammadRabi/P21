@@ -1,0 +1,67 @@
+/* import major sass files */
+
+@use "../components/variables" as *;
+@use "../components/mixins" as *;
+@use "../components/buttons" as *;
+
+/* === start about ===*/
+.about {
+  padding: $sectionPadding;
+  .about-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: $contentMargin;
+    @media (max-width: 991px) {
+      flex-direction: column;
+      text-align: center;
+    }
+    .about-image {
+      position: relative;
+      width: 250px;
+      height: 375px;
+      &:before {
+        content: "";
+        position: absolute;
+        width: 70px;
+        height: calc(100% + 80px);
+        z-index: -1;
+        top: -40px;
+        left: -25px;
+        background-color: #ccc;
+      }
+
+      img {
+        max-width: 100%;
+      }
+    }
+    .about-text {
+      flex-basis: calc(100% - 500px);
+      padding: 60px 10px;
+
+      p:first-of-type {
+        color: #222;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.6;
+      }
+      hr {
+        display: inline-block;
+        width: 50%;
+        background-color: $mainColor;
+        border-color: transparent;
+      }
+      p:last-of-type {
+        color: #777;
+        line-height: 1.6;
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+.about-image {
+  margin: auto;
+}
+
+/* === end about ===*/
